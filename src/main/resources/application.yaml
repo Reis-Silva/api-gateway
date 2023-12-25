@@ -5,13 +5,8 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      #defaultZone: http://eureka-server:8761/eureka
-      defaultZone: http://localhost:8761/eureka
-jaeger:
-    service-name: API-GATEWAY
-    sampler-type: const
-    sampler-param: 1
-    endpoint: http://localhost:14268/api/traces
+      defaultZone: http://eureka-server:8761/eureka
+      #defaultZone: http://localhost:8761/eureka
 spring:
   application:
     name: API-GATEWAY
