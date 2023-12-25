@@ -19,16 +19,10 @@ public class ApiGatewayApplication {
 	public RouteLocator myRoutes(RouteLocatorBuilder builder){
 		return 	builder.routes()
 				.route(p -> p
-						.path("/api/gateway-vacina/**")
+						.path("/api/gateway/**")
 						.filters(f -> f.stripPrefix(2)
 								.addResponseHeader("HoraRequisicao", String.valueOf(LocalDateTime.now())))
 						.uri("lb://VACINA-SERVICE")
-				)
-				.route(p -> p
-						.path("/api/gateway-venda/**")
-						.filters(f -> f.stripPrefix(2)
-								.addResponseHeader("HoraRequisicao", String.valueOf(LocalDateTime.now())))
-						.uri("lb://VENDA-SERVICE")
 				)
 				.build();
 	}
